@@ -1,9 +1,14 @@
+export interface ActionType<T> {
+  type: string;
+  payload: T;
+}
 export interface rootState {
   reducerCard: {
     cards: Card[];
   }
 }
 export interface Card {
+  key?: string;
   id: number;
   imageUrl: string;
   name: string;

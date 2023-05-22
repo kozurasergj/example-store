@@ -1,4 +1,4 @@
-import { Card, interfaceAction } from '../interface/interfaces';
+import { Card } from '../interface/interfaces';
 
 export const updateData = (newData:Card[]) => {
   return {

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Layout, Button } from 'antd';
+import { Layout } from 'antd';
 import CardsProduct from './CardsProduct/CardsProduct';
 import TableProducts from './TableProducts/TableProducts';
 import AddNewCard from './AddNewCard/AddNewCard';

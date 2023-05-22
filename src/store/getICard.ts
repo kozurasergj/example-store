@@ -1,10 +1,9 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
 import { GET } from './actionTypes';
-import { GetCardAction } from '@/interface/interfaces';
-import { Card } from '../interface/interfaces';
+import { ActionType, Card } from '../interface/interfaces';
 
-export const getCard = () => async (dispatch: Dispatch<Card[]>) => {
+export const getCard = () => async (dispatch: Dispatch<ActionType<Card[]>>) => {
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/products`);
     dispatch({

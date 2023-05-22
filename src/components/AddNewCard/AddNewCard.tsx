@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Button } from 'antd';
 import { getRandomNumber, updateData } from '../../helpers/helpers';
-import { Card, rootState } from '../../interface/interfaces';
+import {  GetCardAction, rootState } from '../../interface/interfaces';
 
 const AddNewCard = () => {
   const products = useSelector((state: rootState) => state.reducerCard.cards);
-  const dispatch = useDispatch<Dispatch<Card[]>>();
+  const dispatch = useDispatch<Dispatch<GetCardAction>>();
 
   const addCard = () => {
     if (products.length > 25) return

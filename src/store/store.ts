@@ -1,10 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { rootState } from '../interface/interfaces';
-
 import { reducerCard } from './reducerCard';
 
-const rootReducer:rootState = combineReducers({
+const rootReducer = combineReducers({
   reducerCard,
 });
 

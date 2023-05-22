@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Table, Typography, Input, InputNumber, Popconfirm, Form, Space } from 'antd';
-import { Card } from '@/interface/interfaces';
+import { Card } from '../../interface/interfaces';
 import { paginationConfig, updateData } from '../../helpers/helpers';
-import { EditableCellProps, rootState } from '../../interface/interfaces';
+import { EditableCellProps, GetCardAction, rootState } from '../../interface/interfaces';
 
 const { Link } = Typography;
 
@@ -53,7 +53,7 @@ const EditableCell = <T extends object>({
 
 const ListProducts = () => {
   const products = useSelector((state: rootState) => state.reducerCard.cards);
-  const dispatch = useDispatch<Dispatch<Card[]>>();
+  const dispatch = useDispatch<Dispatch<GetCardAction>>();
 
   useEffect(() => {
     setData(products)
