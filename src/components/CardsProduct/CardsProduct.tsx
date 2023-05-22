@@ -3,11 +3,11 @@ import { useEffect } from 'react'
 import { Card as AntdCard, Col, Row, Image, Button } from 'antd';
 import { Dispatch } from 'redux';
 import { getCard } from '../../store/getICard';
-import { ActionType, Card  } from '../../interface/interfaces';
+import {  Card  } from '../../interface/interfaces';
 import { rootState } from '../../interface/interfaces';
 
 const CardsProduct = () => {
-  const dispatch: Dispatch<ActionType<Card[]>> = useDispatch();
+  const dispatch: Dispatch<any> = useDispatch();
   const cards = useSelector((state: rootState) => state.reducerCard.cards);
 
   useEffect(() => {
