@@ -1,3 +1,5 @@
+import { UPDATE_DATA, GET } from '../store/actionTypes';
+
 export interface ActionType<T> {
   type: string;
   payload: T;
@@ -8,7 +10,7 @@ export interface rootState {
   }
 }
 export interface Card {
-  key?: string;
+  key: number;
   id: number;
   imageUrl: string;
   name: string;
@@ -47,8 +49,15 @@ export interface CardsInterface {
   cards: Card[] | []
 }
 
-export interface interfaceAction {
-  type: string,
+export type actionsTypes = updateActionType | getActionType;
+
+export type updateActionType = {
+  type: typeof UPDATE_DATA,
+  payload: Card[],
+}
+
+export type getActionType = {
+  type: typeof GET,
   payload: Card[],
 }
 

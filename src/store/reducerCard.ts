@@ -1,12 +1,12 @@
 import { GET, UPDATE_DATA } from './actionTypes';
-import { CardsInterface, interfaceAction } from '../interface/interfaces';
+import { CardsInterface, actionsTypes } from '../interface/interfaces';
 
 
 const initialState: CardsInterface = {
   cards: []
 }
 
-export const reducerCard = (state: CardsInterface = initialState, action: interfaceAction) => {
+export const reducerCard = (state: CardsInterface = initialState, action: actionsTypes) => {
   switch (action.type) {
     case GET:
       return {

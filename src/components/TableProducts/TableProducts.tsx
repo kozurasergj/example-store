@@ -63,11 +63,11 @@ const ListProducts = () => {
   const [data, setData] = useState(products || []);
   const [editingKey, setEditingKey] = useState('');
 
-  const isEditing = (record: Card) => record.key === editingKey;
+  const isEditing = (record: Card) => String(record.key) === editingKey;
 
   const edit = (record: Card) => {
     form.setFieldsValue({ ...record });
-    setEditingKey(record.key);
+    record.key && setEditingKey(String(record.key));
   };
 
   const deleteData = (record: Card) => {
@@ -83,7 +83,7 @@ const ListProducts = () => {
     try {
       const row = await form.validateFields();
       const newData = [...data];
-      const index = newData.findIndex((item) => id === parseInt(item.id));
+      const index = newData.findIndex((item:Card) => id === item.id);
       if (index > -1) {
         const item = newData[index];
         newData.splice(index, 1, { ...item, ...row });
